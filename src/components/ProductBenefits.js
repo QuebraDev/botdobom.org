@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProductBenefits = props => {
   return (
-    <section className='product-benefits'>
+    <section className='product-benefits' id='comofunciona'>
       <h1>como funciona</h1>
       <div className='product-benefits-group'>
         <div className='product-benefit-1-tagline'>

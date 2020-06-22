@@ -2,6 +2,7 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import Backdrop from './BackdropSection'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const Header = ({ siteTitle }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -11,6 +12,7 @@ const Header = ({ siteTitle }) => {
   let navItemClasses = 'nav-link-item'
   let burgerClass = 'burger'
   let backdropClass = 'backdrop'
+
   if (isOpen) {
     navClasses = 'nav-links nav-active'
     navItemClasses = 'nav-link-item-active'
@@ -31,7 +33,9 @@ const Header = ({ siteTitle }) => {
             </h4>
           </div>
           <ul className={navClasses}>
-            <li className={navItemClasses}><a href='#comofunciona'>como funciona</a></li>
+            <li className={navItemClasses}>
+              <AnchorLink href='#comofunciona'>como funciona</AnchorLink>
+            </li>
             <li className={navItemClasses}><a href='https://quebradev.com.br/'>quebradev</a></li>
             <li className={`${navItemClasses} nav-item-bold`} ><a href='https://mail.google.com/mail/?view=cm&fs=1&to=eptaccio@gmail.com'>contato</a></li>
           </ul>

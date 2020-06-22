@@ -3,7 +3,7 @@ import Button from './Button'
 
 const ValueProp = props => {
   return (
-    <section className='value-prop' id='comofunciona'>
+    <section className='value-prop'>
       <div className='value-prop-content'>
         <div className='main-message'>
           <h1>chatbots inteligentes para projetos sociais</h1>
