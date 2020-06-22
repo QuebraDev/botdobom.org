@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Landing`,
-    description: `Clean and modern landing page starter template for your next saas project launch.`,
-    siteUrl: `https://www.gatsby-landing-page-starter.com`,
-    author: `@btahir`,
+    title: `botdobom`,
+    description: `tecnologia acessível`,
+    siteUrl: `https://quebradev.com.br/`,
+    author: `@eptaccio`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -12,8 +12,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
-        path: `${__dirname}/src/assets`,
-      },
+        path: `${__dirname}/src/assets`
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -26,10 +26,9 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#675CE2`,
         display: `standalone`,
-        icon: `src/assets/logo.svg`, // This path is relative to the root of the site.
-      },
+        icon: `src/assets/logo.svg` // This path is relative to the root of the site.
+      }
     },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-sitemap`  
-  ],
+    `gatsby-plugin-sitemap`
+  ]
 }
