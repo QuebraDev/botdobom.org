@@ -1,0 +1,12 @@
+.button-link, .button {
+  margin: 0em 0em 2.5em 0em;
+  padding: 0.5em 1.25em;
+  text-decoration: none;
+  background-color: $buttonColor;
+  color: $backgroundColor;
+  border-radius: 2rem;
+  border: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+}
