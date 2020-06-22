@@ -106,6 +106,6 @@
 
 @include breakpoint('from-laptop') {
   .product-benefits-group {
-    grid-template-rows: repeat(5, minmax(7rem,1fr));
+    grid-template-rows: repeat(6, minmax(7rem,1fr));
   }
 }
