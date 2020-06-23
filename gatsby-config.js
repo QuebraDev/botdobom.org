@@ -29,6 +29,12 @@ module.exports = {
         icon: `src/assets/logo.svg` // This path is relative to the root of the site.
       }
     },
-    `gatsby-plugin-sitemap`
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-170421069-1'
+      }
+    }
   ]
 }
