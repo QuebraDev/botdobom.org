@@ -11,7 +11,7 @@ import CallToAction from '../components/CallToAction'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title='Home' />
+    <SEO title='botdobom' />
     <ValueProp />
     <ProductBenefits />
     <ProductFeatures />
