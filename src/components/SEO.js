@@ -3,10 +3,17 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-function SEO ({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+function SEO({ description, lang, meta, title }) {
+  const { site, image: { childImageSharp } } = useStaticQuery(
     graphql`
       query {
+        image: file(absolutePath: { regex: "/botdobom.jpg/" }) {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
         site {
           siteMetadata {
             title
@@ -20,6 +27,7 @@ function SEO ({ description, lang, meta, title }) {
 
   const metaDescription = description || site.siteMetadata.description
 
+  console.log(childImageSharp)
   return (
     <Helmet
       htmlAttributes={{
@@ -37,8 +45,20 @@ function SEO ({ description, lang, meta, title }) {
           content: title
         },
         {
+          property: `og:site_name`,
+          content: title
+        },
+        {
+          property: `og:url`,
+          content: 'http://botdobom.org/'
+        },
+        {
           property: `og:description`,
           content: metaDescription
+        },
+        {
+          property: `og:image`,
+          content: childImageSharp.fluid.src
         },
         {
           property: `og:type`,
@@ -46,7 +66,11 @@ function SEO ({ description, lang, meta, title }) {
         },
         {
           name: `twitter:card`,
-          content: `summary`
+          content: `summary_large_image`
+        },
+        {
+          name: `twitter:url`,
+          content: `http://botdobom.org/`
         },
         {
           name: `twitter:creator`,
@@ -59,6 +83,17 @@ function SEO ({ description, lang, meta, title }) {
         {
           name: `twitter:description`,
           content: metaDescription
+        },
+        {
+          name: `twitter:image:alt`,
+          content: metaDescription
+        },
+        {
+          name: `twitter:site`,
+          content: '@botdobom'
+        }, {
+          name: `twitter:image`,
+          content: childImageSharp.fluid.src
         }
       ].concat(meta)}
     />
@@ -66,7 +101,7 @@ function SEO ({ description, lang, meta, title }) {
 };
 
 SEO.defaultProps = {
-  lang: `pt-br`,
+  lang: `pt-br  `,
   meta: [],
   description: ``
 }
