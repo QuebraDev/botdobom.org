@@ -26,8 +26,8 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const siteUrl = 'http://botdobom.org'
 
-  console.log(childImageSharp)
   return (
     <Helmet
       htmlAttributes={{
@@ -49,7 +49,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:url`,
-          content: 'http://botdobom.org/'
+          content: siteUrl
         },
         {
           property: `og:description`,
@@ -57,7 +57,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: childImageSharp.fluid.src
+          content: `${siteUrl}${childImageSharp.fluid.src}`
         },
         {
           property: `og:type`,
@@ -92,7 +92,7 @@ function SEO({ description, lang, meta, title }) {
           content: '@botdobom'
         }, {
           name: `twitter:image`,
-          content: childImageSharp.fluid.src
+          content: `${siteUrl}${childImageSharp.fluid.src}`
         }
       ].concat(meta)}
     />
